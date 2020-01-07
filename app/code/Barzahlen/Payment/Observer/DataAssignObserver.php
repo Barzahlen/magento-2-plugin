@@ -19,15 +19,18 @@ class DataAssignObserver extends AbstractDataAssignObserver
     public function execute(Observer $observer)
     {
         $method = $this->readMethodArgument($observer);
-        $data = $this->readDataArgument($observer);
 
-        $paymentInfo = $method->getInfoInstance();
+        if ($method->getCode() == 'barzahlen_gateway') {
+            $data = $this->readDataArgument($observer);
 
-        if ($data->getDataByKey('transaction_result') !== null) {
-            $paymentInfo->setAdditionalInformation(
-                'transaction_result',
-                $data->getDataByKey('transaction_result')
-            );
+            $paymentInfo = $method->getInfoInstance();
+
+            if ($data->getDataByKey('transaction_result') !== null) {
+                $paymentInfo->setAdditionalInformation(
+                    'transaction_result',
+                    $data->getDataByKey('transaction_result')
+                );
+            }
         }
     }
 }

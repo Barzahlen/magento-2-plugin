@@ -86,7 +86,7 @@ class ClientMock implements ClientInterface
 
             // We get authentification data
             $client = new Client($aBody['DIVISIONID'], $aBody['APIKEY'], true);
-            $client->setUserAgent('Magento ' . $sMagentoVersion . ' - Plugin v2.0.0');
+            $client->setUserAgent('Magento ' . $sMagentoVersion . ' - Plugin v2.0.1');
 
             $fAmount = number_format($aBody['AMOUNT'], 2, '.', '');
 

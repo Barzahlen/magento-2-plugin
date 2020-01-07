@@ -56,7 +56,7 @@ class Order implements ObserverInterface
 
         // We get authentification data
         $client = new Client($sDivisionId, $sApiKey, true);
-        $client->setUserAgent('Magento ' . $sMagentoVersion . ' - Plugin v2.0.0');
+        $client->setUserAgent('Magento ' . $sMagentoVersion . ' - Plugin v2.0.1');
 
 
         // Invalidate slip

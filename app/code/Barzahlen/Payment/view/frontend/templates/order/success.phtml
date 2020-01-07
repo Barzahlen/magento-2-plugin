@@ -3,6 +3,7 @@
 $order = $block->getOrder();
 ?>
 <div class="checkout-success">
+
     <?php if($order->getIncrementId()):?>
         <?php if ($block->getCustomerId()) :?>
             <p><?php echo __('Your order number is: '.$order->getIncrementId().')') ?></p>
@@ -12,9 +13,12 @@ $order = $block->getOrder();
         <p><?php echo __('We\'ll email you an order confirmation with details and tracking info.') ?></p>
     <?php endif;?>
 
-    <button class="bz-checkout-btn"><?php echo __('Show Barzahlen.de payment slip') ?></button>
+    <?php if($order->getPayment()->getMethod() == "barzahlen_gateway"):?>
+        <button class="bz-checkout-btn"><?php echo __('Show Barzahlen.de payment slip') ?></button>
 
-    <?php echo $block->getPaymentSlip(); ?>
+        <?php echo $block->getPaymentSlip(); ?>
+    <?php endif; ?>
+
 </div>
 
 

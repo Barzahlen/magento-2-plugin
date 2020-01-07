@@ -55,16 +55,24 @@ class Order implements ObserverInterface
         \Magento\Framework\Event\Observer $observer
     )
     {
+
+
         /** @var \Magento\Sales\Model\Order $order */
         $order = $observer->getEvent()->getOrder();
 
-        $sSlipId = $this->barzahlensession->getBarzahlenSlipId();
-        $order->setBarzahlenSlipId($sSlipId)->save();
+        //file_put_contents('var/log/barzahlen.log', date('Y-m-d H:i:s') . 'barzahlensession: ' . print_r($this->barzahlensession->getBarzahlenSlipId(), true), FILE_APPEND);
+        //file_put_contents('var/log/barzahlen.log', date('Y-m-d H:i:s') . 'class methods $order ' . print_r($order->getPayment()->getMethod(), true), FILE_APPEND);
 
-        $order->addCommentToStatusHistory(__('Barzahlen: Payment slip successfully requested and sent.'));
 
-        $orderState = \Magento\Sales\Model\Order::STATE_PENDING_PAYMENT;
-        $order->setState($orderState)->setStatus(\Magento\Sales\Model\Order::STATE_PENDING_PAYMENT);
-        $this->orderRepository->save($order);
+        if ($order->getPayment()->getMethod() == "barzahlen_gateway") {
+            $sSlipId = $this->barzahlensession->getBarzahlenSlipId();
+            $order->setBarzahlenSlipId($sSlipId)->save();
+
+            $order->addCommentToStatusHistory(__('Barzahlen: Payment slip successfully requested and sent.'));
+
+            $orderState = \Magento\Sales\Model\Order::STATE_PENDING_PAYMENT;
+            $order->setState($orderState)->setStatus(\Magento\Sales\Model\Order::STATE_PENDING_PAYMENT);
+            $this->orderRepository->save($order);
+        }
     }
 }

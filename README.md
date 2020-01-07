@@ -2,9 +2,12 @@
 
 
 ## Current Version
-2.0.0
+2.0.1
 
 ## Changelog
+
+### 2.0.1 (Januar 2020)
+* Bugfix success page
 
 ### 2.0.0 (Oktober 2019)
 * Module updated to Magento 2
