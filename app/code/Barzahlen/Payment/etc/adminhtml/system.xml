@@ -21,15 +21,15 @@
                 </field>
                 <field id="division_id" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Division ID</label>
-                    <comment><![CDATA[Your Barzahlen division ID (<a href='https://partner.barzahlen.de/' target='_blank'>https://partner.barzahlen.de/</a>)]]></comment>
+                    <comment><![CDATA[Your Barzahlen/viacash division ID (<a href='https://controlcenter.viacash.com/' target='_blank'>https://controlcenter.viacash.com/</a>)]]></comment>
                 </field>
                 <field id="api_key" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>API key</label>
-                    <comment><![CDATA[Your Barzahlen API key (<a href='https://partner.barzahlen.de/' target='_blank'>https://partner.barzahlen.de/</a>)]]></comment>
+                    <comment><![CDATA[Your Barzahlen/viacash API key (<a href='https://controlcenter.viacash.com/' target='_blank'>https://controlcenter.viacash.com/</a>)]]></comment>
                 </field>
                 <field id="max_order_sum" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Maximum order sum</label>
-                    <comment>Which value of goods can be reached at the most so that Barzahlen is offered as payment method? (Max. 999.99 EUR)</comment>
+                    <comment>Which value of goods can be reached at the most so that Barzahlen/viacash is offered as payment method? (Max. 999.99 EUR)</comment>
                     <validate>validate-max-value-decimal</validate>
                 </field>
 

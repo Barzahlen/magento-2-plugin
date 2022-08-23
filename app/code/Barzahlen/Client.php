@@ -7,9 +7,9 @@ use Barzahlen\Exception as Exception;
 
 class Client
 {
-    const API_URL = 'https://api.barzahlen.de:443/v2';
+    const API_URL = 'https://api.viafintech.com:443/v2';
 
-    const API_SANDBOX_URL = 'https://api-sandbox.barzahlen.de:443/v2';
+    const API_SANDBOX_URL = 'https://api-sandbox.viafintech.com:443/v2';
 
     /**
      * @var string

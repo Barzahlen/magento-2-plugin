@@ -14,7 +14,7 @@ $order = $block->getOrder();
     <?php endif;?>
 
     <?php if($order->getPayment()->getMethod() == "barzahlen_gateway"):?>
-        <button class="bz-checkout-btn"><?php echo __('Show Barzahlen.de payment slip') ?></button>
+        <button class="bz-checkout-btn"><?php echo __('Show Barzahlen/viacash payment slip') ?></button>
 
         <?php echo $block->getPaymentSlip(); ?>
     <?php endif; ?>
