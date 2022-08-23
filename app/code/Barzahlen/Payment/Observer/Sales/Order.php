@@ -68,7 +68,7 @@ class Order implements ObserverInterface
             $sSlipId = $this->barzahlensession->getBarzahlenSlipId();
             $order->setBarzahlenSlipId($sSlipId)->save();
 
-            $order->addCommentToStatusHistory(__('Barzahlen: Payment slip successfully requested and sent.'));
+            $order->addCommentToStatusHistory(__('Barzahlen/viacash: Payment slip successfully requested and sent.'));
 
             $orderState = \Magento\Sales\Model\Order::STATE_PENDING_PAYMENT;
             $order->setState($orderState)->setStatus(\Magento\Sales\Model\Order::STATE_PENDING_PAYMENT);

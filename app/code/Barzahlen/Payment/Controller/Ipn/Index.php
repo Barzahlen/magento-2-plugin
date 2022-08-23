@@ -131,7 +131,7 @@ class Index extends Action
         $order->setTotalPaid($order->getTotalDue())->save();
 
         // Add "slip was paid"-message to order comment history
-        $order->addCommentToStatusHistory(__('Barzahlen: The payment slip was paid to the offline partner.'))->save();
+        $order->addCommentToStatusHistory(__('Barzahlen/viacash: The payment slip was paid to the retail partner.'))->save();
     }
 
 
@@ -148,6 +148,6 @@ class Index extends Action
         $order->setStatus(\Magento\Sales\Model\Order::STATE_CANCELED, true)->save();
 
         // Add "slip has expired"-message to order comment history
-        $order->addCommentToStatusHistory(__('Barzahlen: The payment period of the payment slip has expired.'))->save();
+        $order->addCommentToStatusHistory(__('Barzahlen/viacash: The payment period of the payment slip has expired.'))->save();
     }
 }
