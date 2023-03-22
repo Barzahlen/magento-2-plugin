@@ -1,5 +1,8 @@
 # Barzahlen Payment Module (Magento)
 
+## Deprecation Notice
+This module is no longer maintained and should not be used for new projects.
+
 ## Changelog
 You can find the detailed changelog [here](CHANGELOG.md)
 
